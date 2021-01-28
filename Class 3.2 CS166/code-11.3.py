@@ -22,9 +22,13 @@ def observe():
     print(density)
     density.append(np.sum(config)/(n*n))
     cla()
-    fig, (ax1, ax2) = plt.subplots(1, 2)
-    ax1.imshow(config, vmin = 0, vmax = 1, cmap = cm.binary)
-    ax2.plot(range(len(density)), density)
+    subplot(1, 2, 1)
+    imshow(config, vmin = 0, vmax = 1, cmap = cm.binary)
+    subplot(1, 2, 2)
+    plot(range(len(density)), density)
+    #fig, (ax1, ax2) = plt.subplots(1, 2)
+    #ax1.imshow(config, vmin = 0, vmax = 1, cmap = cm.binary)
+    #ax2.plot(range(len(density)), density)
 
 def update():
     global config, nextconfig
