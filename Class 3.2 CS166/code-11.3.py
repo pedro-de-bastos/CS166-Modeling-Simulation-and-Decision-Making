@@ -19,16 +19,12 @@ def initialize():
 def observe():
     global config, nextconfig
     global density
-    print(density)
     density.append(np.sum(config)/(n*n))
     cla()
     subplot(1, 2, 1)
     imshow(config, vmin = 0, vmax = 1, cmap = cm.binary)
     subplot(1, 2, 2)
     plot(range(len(density)), density)
-    #fig, (ax1, ax2) = plt.subplots(1, 2)
-    #ax1.imshow(config, vmin = 0, vmax = 1, cmap = cm.binary)
-    #ax2.plot(range(len(density)), density)
 
 def update():
     global config, nextconfig
@@ -48,4 +44,3 @@ def update():
 
 import pycxsimulator
 pycxsimulator.GUI().start(func=[initialize, observe, update])
-plt.plot(range(len(density)), density)
